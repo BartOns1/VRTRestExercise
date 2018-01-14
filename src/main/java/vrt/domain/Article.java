@@ -8,12 +8,17 @@ public class Article {
     private long id = 0;
 
     //For this sprint, dates expressed by integers
-    private Integer theYear = 0;
-    private Integer monthOfYear = 0;
-    private Integer dayOfMonth = 0;
+    private Integer theYear;
+    private Integer monthOfYear;
+    private Integer dayOfMonth;
 
-    private String title = null;
-    private String content = null;
+    private String title;
+    private String content;
+
+    //Suppose a new field is necessary, e.g. Source of an article.
+    // The article structure changes
+    private String source;
+
 
     public Article() {
     }
@@ -41,6 +46,12 @@ public class Article {
             throw new IllegalArgumentException("no content");
         this.content = content;
     }
+
+    public Article(long id , Integer theYear, Integer monthOfYear, Integer dayOfMonth, String title, String content, String source){
+        this(id, theYear, monthOfYear, dayOfMonth, title, content);
+        this.source = source;
+    }
+
 
     public long getId() {
         return id;
@@ -84,5 +95,13 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 }

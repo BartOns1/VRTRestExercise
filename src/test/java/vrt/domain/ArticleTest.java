@@ -19,7 +19,7 @@ public class ArticleTest {
     private Article article2;
     private Article article3;
     private Article article4;
-
+    private Article article5;
 
 
     @Before
@@ -28,6 +28,7 @@ public class ArticleTest {
         article2 = new Article(2,2018,1,11,"Brand in Leuven", "In het centrum van Leuven is de bliksem ingeslagen op een boom van het park. De boom vatte vuur.");
         article3 = new Article(3,2018,1,14,"Club Brugge verliest voor de eerste keer", "test content");
         article4 = new Article(4,2017,12,23,"Lang article", "heel lang article.");
+        article5 = new Article(4,2017,12,23,"Lang article", "heel lang article.", "NewsMonkey");
     }
     public ArticleTest() {
     }
@@ -37,10 +38,12 @@ public class ArticleTest {
         assertNotNull(article1);
         assertNotNull(article2);
         assertNotNull(article4);
+        assertNotNull(article5);
         assertEquals(1,article1.getId());
         assertEquals(Integer.valueOf(2017) ,  article1.getTheYear());
         assertEquals("Lang article", article4.getTitle());
         assertThat(article2.getContent(),both(startsWith("In")).and(containsString("Leuven")).and(endsWith("vuur.")));
+        assertEquals("NewsMonkey", article5.getSource());
     }
 
 

@@ -20,10 +20,11 @@ public class ArticleApp {
 
         Article article1 = new Article(1,2017,12,8,"Zomerakkoord opgedrongen", "Het parlement heeft 7 dagen om duizenden pagina's te lezen en te discussiëren. Dat is te weinig om van een democratisch proces te spreken");
         Article article2 = new Article(2,2018,1,11,"Brand in Leuven", "In het centrum van Leuven is de bliksem ingeslagen op een boom van het park. De boom vatte vuur.");
-
+        Article article6 = new Article(6, 2018, 1, 10, "Brand in Leuven", "In het centrum van Leuven...", "Belga");
 
         articles.add(article1);
         articles.add(article2);
+        articles.add(article6);
         DataClass.getInstance().setArticles(articles);
 
     }

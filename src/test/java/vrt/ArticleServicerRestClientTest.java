@@ -19,9 +19,17 @@ public class ArticleServicerRestClientTest {
 
 
     @Test
-    public void restServiceToRetrieveASingleBookCanBeCalled() throws Exception {
+    public void restServiceToRetrieveASingleArticleCanBeCalled() throws Exception {
         Article article = restTemplate.getForObject(URL_PREFIX + "api/v1?id=2", Article.class);
         assertEquals("Brand in Leuven", article.getTitle());
         assertEquals(Integer.valueOf(11) , article.getDayOfMonth());
     }
+
+    @Test
+    public void restServiceToRetrieveASingleArticleV2CanBeCalled() throws Exception {
+        Article article = restTemplate.getForObject(URL_PREFIX + "api/v2?id=6", Article.class);
+        assertEquals("Brand in Leuven", article.getTitle());
+        assertEquals("Belga" , article.getSource());
+    }
+
 }
